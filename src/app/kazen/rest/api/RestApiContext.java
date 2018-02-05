@@ -20,4 +20,19 @@ public class RestApiContext {
 	public void set(String key, Object object) {
 		map.put(key, object);
 	}
+	
+    public HttpServletRequest getRequest() {
+		return (HttpServletRequest) map.get("Request");
+	}
+
+	public HttpServletResponse getResponse() {
+		return (HttpServletResponse) map.get("Response");
+	}
+
+	public String getPath() {
+    	return (String) getRequest().getRequestURI();
+    }
+	public String getRequestMethod() {
+        return (String) map.get("RequestType");
+	}
 }

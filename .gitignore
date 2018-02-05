@@ -2,3 +2,4 @@ build/classes
 .classpath
 .project
 .settings/*
+/build/
