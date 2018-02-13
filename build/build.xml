@@ -1,0 +1,29 @@
+<project name="build" default="init" basedir=".">
+	<loadfile property="trim_val" srcfile="ant.properties">
+    </loadfile>
+    <property file="ant.properties"/>
+	
+	<target name="init">
+		<echo message="In the target:::init"/>
+		
+		<mkdir dir="${build_dir}"/>
+		<mkdir dir="${prod_home}"/>
+		
+		<antcall target="ServerTask"/>
+		<antcall target="ClientTask"/>
+		<antcall target="ZippingTask"/>
+	</target>
+	
+	<target name="ServerTask">
+			<echo message="In the target:::ServerTask"/>
+	</target>
+		
+	<target name="ClientTask">
+			<echo message="In the target:::ClientTask"/>
+	</target>
+		
+	<target name="ZippingTask">
+			<echo message="In the target:::ZippingTask"/>
+	</target>
+		
+</project>
