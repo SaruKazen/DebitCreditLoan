@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import app.kazen.rest.api.RestApiContext;
-import app.kazen.rest.api.RestApiProcessor;
+import app.kazen.rest.api.RestAPIContext;
+import app.kazen.rest.api.RestAPIProcessor;
 
 public class AppCommonServlet extends HttpServlet {
 
@@ -22,8 +22,8 @@ public class AppCommonServlet extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
-			RestApiContext context = new RestApiContext(request, response);
-			RestApiProcessor.processRequest(context);
+			RestAPIContext context = new RestAPIContext(request, response);
+			RestAPIProcessor.processRequest(context);
 		} catch (Exception e) {
 			LOGGER.log(Level.WARNING, "Exception in servlet", e);
 			throw new ServletException("Exception in Servlet", e);
