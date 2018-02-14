@@ -1,11 +1,11 @@
 //$Id$
-package app.kazen.model;
+package com.kazen.model;
 
-import app.kazen.util.DateUtil;
+import com.kazen.util.DateUtil;
 
-public class CreditTransaction extends Transaction{
+public class CreditTransaction extends Transaction {
 
-	public CreditTransaction(Long transactionId, Long transactionDate,Long userId, Integer amount) {
+	public CreditTransaction(Long transactionId, Long transactionDate, Long userId, Integer amount) {
 		super(transactionId, transactionDate, userId, amount);
 	}
 

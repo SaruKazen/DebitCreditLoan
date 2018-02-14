@@ -1,11 +1,11 @@
 //$Id$
-package app.kazen.model;
+package com.kazen.model;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import app.kazen.util.DateUtil;
+import com.kazen.util.DateUtil;
 
 public class User {
 
@@ -84,5 +84,10 @@ public class User {
 			this.debitTransaction = new HashMap<Long, DebitTransaction>();
 		}
 		return this.debitTransaction;
+	}
+
+	public void getUserData() {
+		Long userId = getUserId();
+		String username = getUserName();
 	}
 }

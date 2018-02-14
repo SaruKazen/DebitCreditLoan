@@ -1,5 +1,5 @@
 //$Id$
-package app.kazen.manager;
+package com.kazen.manager;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,14 +7,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import app.kazen.dao.ServerConnection;
-import app.kazen.model.User;
-import app.kazen.util.DateUtil;
+import com.kazen.dao.ServerConnection;
+import com.kazen.model.User;
+import com.kazen.util.DateUtil;
 
 public class Manager {
 
 	private Map<Long, User> users;
 	private ServerConnection connection;
+
+	private static Manager manager = new Manager();
 
 	private Manager() {
 		intialize();
@@ -29,7 +31,7 @@ public class Manager {
 	}
 
 	public static Manager getInstance() {
-		return new Manager();
+		return manager;
 	}
 
 	private void intialize() {
@@ -54,10 +56,10 @@ public class Manager {
 		return Boolean.TRUE;
 	}
 
-	public List<Map<String,Object>> getUsers(){
-		List<Map<String,Object>> userslist =  new ArrayList<Map<String,Object>>();
+	public List<Map<String, Object>> getUsers() {
+		List<Map<String, Object>> userslist = new ArrayList<Map<String, Object>>();
 		for (Entry<Long, User> entry : users.entrySet()) {
-			Map<String,Object> user = new HashMap<String, Object>();
+			Map<String, Object> user = new HashMap<String, Object>();
 			user.put("user_id", entry.getValue().getUserId());
 			user.put("user_name", entry.getValue().getUserName());
 			user.put("created_time", DateUtil.getTimeAsString(entry.getValue().getUserId()));

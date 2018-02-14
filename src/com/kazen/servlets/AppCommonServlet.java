@@ -1,5 +1,5 @@
 //$Id$
-package app.kazen.servlets;
+package com.kazen.servlets;
 
 import java.io.IOException;
 import java.util.logging.Level;
@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import app.kazen.rest.api.RestAPIContext;
-import app.kazen.rest.api.RestAPIProcessor;
+import com.kazen.rest.api.RestAPIContext;
+import com.kazen.rest.api.RestAPIProcessor;
 
 public class AppCommonServlet extends HttpServlet {
 

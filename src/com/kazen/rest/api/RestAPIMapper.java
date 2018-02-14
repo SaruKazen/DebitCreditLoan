@@ -1,5 +1,5 @@
 //$Id$
-package app.kazen.rest.api;
+package com.kazen.rest.api;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -11,13 +11,12 @@ public class RestAPIMapper {
 
 	static {
 		restUrlMap = new HashMap<String, Map<String, String>>();
-		
-		Map<String,String> handlers = new HashMap<String, String>();
-		handlers.put("GET", "app.kazen.handlers.GetUserHandler");
-		handlers.put("POST", "app.kazen.handlers.AddUserHandler");
+
+		Map<String, String> handlers = new HashMap<String, String>();
+		handlers.put("GET", "com.kazen.handlers.GetUserHandler");
+		handlers.put("POST", "com.kazen.handlers.AddUserHandler");
 		restUrlMap.put("/api/users", handlers);
-		
-		
+
 	}
 
 	public static String getHandler(String path, String method) throws Exception {
