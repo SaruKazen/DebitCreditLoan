@@ -1,5 +1,5 @@
 //$Id$
-package app.kazen.rest.api;
+package com.kazen.rest.api;
 
 import java.lang.reflect.Method;
 import java.util.logging.Level;

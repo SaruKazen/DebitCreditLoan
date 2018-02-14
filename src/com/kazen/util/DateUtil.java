@@ -1,5 +1,5 @@
 //$Id$
-package app.kazen.util;
+package com.kazen.util;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -44,8 +44,7 @@ public class DateUtil {
 		return getCurrentTimeAsString(customDateFormat);
 	}
 
-	public static String getCurrentTimeAsString(String customDateFormat)
-			throws Exception {
+	public static String getCurrentTimeAsString(String customDateFormat) throws Exception {
 		DateFormat dateFormat = new SimpleDateFormat(customDateFormat);
 		Date date = new Date();
 		String currentTime = dateFormat.format(date);
@@ -69,8 +68,7 @@ public class DateUtil {
 		}
 	}
 
-	public static Date parseDate(String dateStr, String format)
-			throws ParseException {
+	public static Date parseDate(String dateStr, String format) throws ParseException {
 		SimpleDateFormat sdf = new SimpleDateFormat(format);
 		Date date = sdf.parse(dateStr);
 		return date;

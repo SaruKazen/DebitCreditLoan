@@ -1,12 +1,12 @@
 //$Id$
-package app.kazen.main;
+package com.kazen.main;
 
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Scanner;
 
-import app.kazen.manager.Manager;
+import com.kazen.manager.Manager;
 
 public class MainClass {
 
@@ -29,24 +29,24 @@ public class MainClass {
 			int choice = scan.nextInt();
 			scan.nextLine();
 			switch (choice) {
-			case 1:// accessing admin account
-			{
-				addUser();
-				break;
-			}
-			case 2:// accessing user account
-			{
-				listUser();
-				break;
-			}
-			case 0: {
-				System.out.println("Closing the Program");
-				return;
-			}
-			default: {
-				System.out.println("The number is not in list");
-				break;
-			}
+				case 1 :// accessing admin account
+				{
+					addUser();
+					break;
+				}
+				case 2 :// accessing user account
+				{
+					listUser();
+					break;
+				}
+				case 0 : {
+					System.out.println("Closing the Program");
+					return;
+				}
+				default : {
+					System.out.println("The number is not in list");
+					break;
+				}
 			}
 		}
 

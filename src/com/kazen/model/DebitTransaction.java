@@ -1,7 +1,7 @@
 //$Id$
-package app.kazen.model;
+package com.kazen.model;
 
-import app.kazen.util.DateUtil;
+import com.kazen.util.DateUtil;
 
 public class DebitTransaction extends Transaction {
 

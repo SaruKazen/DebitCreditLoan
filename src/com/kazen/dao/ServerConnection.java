@@ -1,5 +1,5 @@
 //$Id$
-package app.kazen.dao;
+package com.kazen.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,10 +11,10 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import app.kazen.model.CreditTransaction;
-import app.kazen.model.DebitTransaction;
-import app.kazen.model.User;
-import app.kazen.util.DateUtil;
+import com.kazen.model.CreditTransaction;
+import com.kazen.model.DebitTransaction;
+import com.kazen.model.User;
+import com.kazen.util.DateUtil;
 
 public class ServerConnection {
 
@@ -164,7 +164,8 @@ public class ServerConnection {
 		Statement command = null;
 		try {
 			command = connect.createStatement();
-			command.executeUpdate("insert into UserInfo values('" + user.getUserId() + "','" + user.getUserName() + "','" + DateUtil.getCurrentTime() + "')");
+			command.executeUpdate("insert into UserInfo values('" + user.getUserId() + "','" + user.getUserName() + "','" + DateUtil.getCurrentTime()
+					+ "')");
 		} catch (Exception e) {
 			return Boolean.FALSE;
 		} finally {

@@ -1,5 +1,5 @@
 //$Id$
-package app.kazen.model;
+package com.kazen.model;
 
 public abstract class Transaction {
 
