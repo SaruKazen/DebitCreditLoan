@@ -2,4 +2,7 @@ build/classes
 .classpath
 .project
 .settings/*
-
+jsapps/DebitCreditLoan/node_modules
+jsapps/DebitCreditLoan/vendor
+jsapps/DebitCreditLoan/tmp
+jsapps/DebitCreditLoan/dist
