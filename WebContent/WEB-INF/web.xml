@@ -11,13 +11,23 @@
     </description>
 
     <servlet>
-        <servlet-name>HelloServlet</servlet-name>
+        <servlet-name>TestServlet</servlet-name>
         <servlet-class>com.kazen.servlets.TestServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>HelloServlet</servlet-name>
-        <url-pattern>/hello</url-pattern>
+        <servlet-name>TestServlet</servlet-name>
+        <url-pattern>/test</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>AppCommonServlet</servlet-name>
+        <servlet-class>com.kazen.servlets.AppCommonServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AppCommonServlet</servlet-name>
+        <url-pattern>/api/*</url-pattern>
     </servlet-mapping>
 
 </web-app>

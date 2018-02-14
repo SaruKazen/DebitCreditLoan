@@ -1,6 +1,8 @@
 //$Id$
 package com.kazen.rest.api;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
@@ -33,5 +35,12 @@ public class RestAPIContext {
 	}
 	public String getRequestMethod() {
 		return (String) map.get("RequestType");
+	}
+	public PrintWriter getResponseWriter() throws IOException {
+		return this.getResponse().getWriter();
+	}
+	
+	public void setHttpResponseCode(int statusCode) {
+	    this.getResponse().setStatus(statusCode);
 	}
 }

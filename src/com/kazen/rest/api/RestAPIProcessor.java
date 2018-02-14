@@ -5,6 +5,7 @@ import java.lang.reflect.Method;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import com.kazen.rest.api.RestAPIResponseWriter;
 public class RestAPIProcessor {
 	private static final Logger LOGGER = Logger.getLogger(RestAPIProcessor.class.getName());
 
@@ -18,9 +19,16 @@ public class RestAPIProcessor {
 			Class<?> handlerCls = Class.forName(handler);
 			Object clsObj = handlerCls.newInstance();
 
-			Object obj;
-			Method method = handlerCls.getMethod(PROCESS_NAME, context.getClass());
-			method.invoke(clsObj, context);
+			Object responseObj;
+			try {
+				Method method = handlerCls.getMethod(PROCESS_NAME, context.getClass());
+				responseObj = method.invoke(clsObj, context);
+			} catch (Exception ex) {
+				LOGGER.log(Level.SEVERE, "unable to invoke processRequest", ex);
+				responseObj = ex;
+			}
+			RestAPIResponseWriter.writeResponse(context, responseObj);
+
 		} catch (Exception e) {
 			LOGGER.log(Level.SEVERE, "Unable to create Instance Object for handler " + handler, e);
 			throw e;
