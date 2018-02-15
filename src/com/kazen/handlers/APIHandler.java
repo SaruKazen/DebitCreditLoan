@@ -9,19 +9,19 @@ import com.kazen.rest.api.RestAPIContext;
 public abstract class APIHandler {
 	private static final Logger LOGGER = Logger.getLogger(APIHandler.class.getName());
 
-	protected void handleGet(RestAPIContext context) throws Exception {
+	protected Object handleGet(RestAPIContext context) throws Exception {
 		throw getUnhandledException(context);
 	}
 
-	protected void handlePut(RestAPIContext context) throws Exception {
+	protected Object handlePut(RestAPIContext context) throws Exception {
 		throw getUnhandledException(context);
 	}
 
-	protected void handlePost(RestAPIContext context) throws Exception {
+	protected Object handlePost(RestAPIContext context) throws Exception {
 		throw getUnhandledException(context);
 	}
 
-	protected void handleDelete(RestAPIContext context) throws Exception {
+	protected Object handleDelete(RestAPIContext context) throws Exception {
 		throw getUnhandledException(context);
 	}
 
@@ -30,23 +30,20 @@ public abstract class APIHandler {
 		return new Exception("Unhandled........");
 	}
 
-	public void processRequest(RestAPIContext context) throws Exception {
+	public Object processRequest(RestAPIContext context) throws Exception {
 		String method = context.getRequestMethod();
 
 		switch (method) {
 			case "POST" :
-				handlePost(context);
-				break;
+				return handlePost(context);
 			case "GET" :
-				handleGet(context);
-				break;
+				return  handleGet(context);
 			case "PUT" :
-				handlePut(context);
-				break;
+				return 	handlePut(context);
 			case "DELETE" :
-				handleDelete(context);
-				break;
+				return handleDelete(context);
 		}
+		return null;
 	}
 
 }
