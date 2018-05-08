@@ -1,0 +1,22 @@
+/* Your custom styles */
+.text-muted {
+  color: #184de4 !important;
+}
+.mainframe {
+    padding-left:60px;
+    padding-right:60px;
+    padding-top:20px;
+    padding-bottom:20px;
+}
+
+.subframe {
+    height: 600px;
+    padding-top:20px;
+    padding-bottom:20px;
+    padding-right:20px;
+    padding-left:20px;
+}
+
+.card {
+    height: 550px;
+}

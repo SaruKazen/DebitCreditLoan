@@ -29,7 +29,7 @@ public class ServerConnection {
 		Statement command = null;
 		try {
 			checkDatabaseConnection();
-			connect = DriverManager.getConnection("jdbc:mysql://localhost/DebitCrebitLoan", "root", "");
+			connect = DriverManager.getConnection("jdbc:mysql://localhost/DebitCreditLoan", "root", "");
 			command = connect.createStatement();
 			try {
 				command.executeUpdate(" create table UserInfo(UserId BIGINT,UserName VARCHAR(50),CreatedDate BIGINT)");
@@ -60,14 +60,14 @@ public class ServerConnection {
 	private void checkDatabaseConnection() throws SQLException {
 		Statement command = null;
 		try {
-			connect = DriverManager.getConnection("jdbc:mysql://localhost/DebitCrebitLoan", "root", "");
+			connect = DriverManager.getConnection("jdbc:mysql://localhost/DebitCreditLoan", "root", "");
 			LOGGER.log(Level.FINE, "Database DebitCreditLoan exists");
 		} catch (Exception e) {
 			LOGGER.log(Level.INFO, "Database missing, recreating.....");
 			connect = DriverManager.getConnection("jdbc:mysql://localhost", "root", "");
 			LOGGER.log(Level.INFO, "Creating database...");
 			command = connect.createStatement();
-			String sql = "CREATE DATABASE DebitCrebitLoan";
+			String sql = "CREATE DATABASE DebitCreditLoan";
 			command.executeUpdate(sql);
 			LOGGER.log(Level.INFO, "Database created successfully...");
 		} finally {

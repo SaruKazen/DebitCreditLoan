@@ -1,6 +1,9 @@
 //$Id$
 package com.kazen.model;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public abstract class Transaction {
 
 	private Long transactionId;
@@ -45,5 +48,14 @@ public abstract class Transaction {
 
 	public Integer getAmount() {
 		return this.amount;
+	}
+	
+	public Map<String,Object> getTransactionData() {
+	    Map<String,Object> data = new HashMap<String, Object>();
+	    data.put("user_id", getUserId());
+	    data.put("transaction_id", getTransactionId());
+	    data.put("transaction_amount", getAmount());
+	    data.put("transaction_date", getTransactionDate());
+	    return data;
 	}
 }
